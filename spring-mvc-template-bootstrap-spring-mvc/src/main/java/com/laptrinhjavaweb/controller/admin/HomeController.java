@@ -7,6 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller(value = "homeControllerOfAdmin")
 public class HomeController {
+	//This is My Second commit
 
 	@RequestMapping(value = "/quan-tri/trang-chu", method = RequestMethod.GET)
 	public ModelAndView homePage() {
