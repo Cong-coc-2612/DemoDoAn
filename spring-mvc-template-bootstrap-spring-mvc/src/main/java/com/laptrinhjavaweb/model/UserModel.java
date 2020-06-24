@@ -2,6 +2,7 @@ package com.laptrinhjavaweb.model;
 
 public class UserModel extends AbstractModel<UserModel> {
 	
+	// dai dien cho entity ccua table
 	private String userName;
 	private String fullName;
 	private String password;

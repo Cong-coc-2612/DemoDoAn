@@ -72,7 +72,7 @@
 													</tr>
 												</thead>
 												<tbody>
-													<c:forEach var="item" items="${model.listResult}">
+													<c:forEach var="item" items="${model}">
 														<tr>
 															<td><input type="checkbox" id="checkbox_${item.id}" value="${item.id}"></td>
 															<td>${item.title}</td>
@@ -113,26 +113,7 @@
 		</div>
 		<!-- /.main-content -->
 		<script>
-			var totalPages = ${model.totalPage};
-			var currentPage = ${model.page};
-			var limit = 2;
-			$(function () {
-				window.pagObj = $('#pagination').twbsPagination({
-					totalPages: totalPages,
-					visiblePages: 10,
-					startPage: currentPage,
-					onPageClick: function (event, page) {
-						if (currentPage != page) {
-							$('#maxPageItem').val(limit);
-							$('#page').val(page);
-							$('#sortName').val('title');
-							$('#sortBy').val('desc');
-							$('#type').val('list');
-							$('#formSubmit').submit();
-						}
-					}
-				});
-			});
+			
 			
 			$("#btnDelete").click(function() {
 				var data = {};

@@ -1,27 +1,13 @@
-package com.laptrinhjavaweb.entity;
+package com.laptrinhjavaweb.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
-@Entity
-@Table(name ="new")
-public class NewEntity extends BaseEntity{
-	
-	
-	@Column(name = "title")
+public class NewDTO extends AbstractDTO<NewDTO>{
 	private String title;
-	
-	@Column(name = "thumbnail")
 	private String thumbnail;
-	
-	@Column(name = "shortdescription", columnDefinition = "TEXT")
 	private String shortDescription;
-	
-	@Column(name = "content", columnDefinition = "TEXT")
 	private String content;
+	private Long categoryId;
+	private String categoryCode;
 
-	
 	public String getTitle() {
 		return title;
 	}
@@ -54,4 +40,19 @@ public class NewEntity extends BaseEntity{
 		this.content = content;
 	}
 
+	public Long getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(Long categoryId) {
+		this.categoryId = categoryId;
+	}
+
+	public String getCategoryCode() {
+		return categoryCode;
+	}
+
+	public void setCategoryCode(String categoryCode) {
+		this.categoryCode = categoryCode;
+	}
 }

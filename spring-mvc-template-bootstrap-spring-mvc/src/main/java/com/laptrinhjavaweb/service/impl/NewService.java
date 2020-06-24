@@ -5,20 +5,22 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.laptrinhjavaweb.dao.INewDAO;
-import com.laptrinhjavaweb.model.NewModel;
+import com.laptrinhjavaweb.entity.NewEntity;
+import com.laptrinhjavaweb.repository.NewRepository;
 import com.laptrinhjavaweb.service.INewService;
 
 @Service
 public class NewService implements INewService {
-	
+
 	@Autowired
-	private INewDAO newDao;
+	private NewRepository newRepository;
 
 	@Override
-	public List<NewModel> findAll() {
-		return newDao.findAll();
+	public List<NewEntity> findAll() {
+		return newRepository.findAll();
 	}
+
+
 
 	
 

@@ -1,13 +1,14 @@
 package com.laptrinhjavaweb.controller.admin;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.laptrinhjavaweb.model.NewModel;
+import com.laptrinhjavaweb.entity.NewEntity;
 import com.laptrinhjavaweb.service.INewService;
 
 @Controller(value = "newControllerOfAdmin")
@@ -17,10 +18,10 @@ public class newController {
 	private INewService newService;
 	
 	@RequestMapping(value = "/quan-tri/bai-viet/danh-sach", method = RequestMethod.GET)
-	public ModelAndView showList(@ModelAttribute("model") NewModel model) {
+	public ModelAndView showList() {
 		ModelAndView mav = new ModelAndView("admin/new/list");
-		model.setListResult(newService.findAll());
-		mav.addObject("model", model);
+		List<NewEntity> newEntitys = newService.findAll();
+		mav.addObject("model", newEntitys);
 		return mav;
 	}
 	

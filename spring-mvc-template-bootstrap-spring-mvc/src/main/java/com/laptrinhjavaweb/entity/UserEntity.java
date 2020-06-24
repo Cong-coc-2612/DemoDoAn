@@ -26,7 +26,9 @@ public class UserEntity extends BaseEntity{
 
 	@Column
 	private Integer status;
-
+    
+	//default = lazy - lazy lay dc userEntity len roi thi role chua load len duoc -> tang performance but phai config them o JPA config
+	//EAGER: load role ngay khi lay dc userEntity -> giam performance
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "userid"), 
 								  inverseJoinColumns = @JoinColumn(name = "roleid"))
