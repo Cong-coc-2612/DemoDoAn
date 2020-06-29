@@ -57,7 +57,7 @@ public class JPAConfig {
 	
 	Properties additionalProperties() {
 		Properties properties = new Properties();
-//		properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+//		properties.setProperty("hibernate.hbm2ddl.auto", "update");
 //		properties.setProperty("hibernate.hbm2ddl.auto", "create");
 		properties.setProperty("hibernate.hbm2ddl.auto", "none");
 		//apply to one to many and many to many
